@@ -1,4 +1,5 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const SidebarContainer = styled.aside`
   width: 250px;
@@ -11,8 +12,8 @@ export const SidebarContainer = styled.aside`
 
 export const SidebarButton = styled.button<{ isActive?: boolean }>`
   width: 190px;
-  background-color: ${({ isActive }) => (isActive ? "#434555" : "#e5e6ee")};
-  color: ${({ isActive }) => (isActive ? "#e5e6ee" : "#434555")};
+  background-color: ${({ isActive }) => (isActive ? '#434555' : '#e5e6ee')};
+  color: ${({ isActive }) => (isActive ? '#e5e6ee' : '#434555')};
   font-weight: 700;
   font-size: 24px;
   border: none;
@@ -30,12 +31,17 @@ export const SidebarButton = styled.button<{ isActive?: boolean }>`
   }
 `;
 
-export const SidebarLink = styled.a<{ isActive?: boolean }>`
-  color: ${({ isActive }) => (isActive ? "#fff" : "#aaa")};
-  background-color: ${({ isActive }) => (isActive ? "#3c3c4e" : "transparent")};
+export const SidebarLink = styled(NavLink)`
+  color: #aaa;
+  background-color: transparent;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+
+  &.active {
+    color: #fff;
+    background-color: #3c3c4e;
+  }
 
   &:hover {
     background-color: #3c3c4e;

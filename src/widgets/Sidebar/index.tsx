@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { SidebarContainer, SidebarButton, SidebarLink } from './styled';
 
 export const Sidebar = () => {
@@ -17,18 +17,30 @@ export const Sidebar = () => {
       >
         Create
       </SidebarButton>
-      <NavLink to="/">
-        {({ isActive }) => <SidebarLink isActive={isActive}>Projects</SidebarLink>}
-      </NavLink>
-      <NavLink to="/invites">
-        {({ isActive }) => <SidebarLink isActive={isActive}>Invites</SidebarLink>}
-      </NavLink>
-      <NavLink to="/users">
-        {({ isActive }) => <SidebarLink isActive={isActive}>Users</SidebarLink>}
-      </NavLink>
-      <NavLink to="/teams">
-        {({ isActive }) => <SidebarLink isActive={isActive}>Teams</SidebarLink>}
-      </NavLink>
+      <SidebarLink
+        to="/"
+        className={currentPath === '/' ? 'active' : ''}
+      >
+        Projects
+      </SidebarLink>
+      <SidebarLink
+        to="/invites"
+        className={currentPath === '/invites' ? 'active' : ''}
+      >
+        Invites
+      </SidebarLink>
+      <SidebarLink
+        to="/users"
+        className={currentPath === '/users' ? 'active' : ''}
+      >
+        Users
+      </SidebarLink>
+      <SidebarLink
+        to="/teams"
+        className={currentPath === '/teams' ? 'active' : ''}
+      >
+        Teams
+      </SidebarLink>
     </SidebarContainer>
   );
 };

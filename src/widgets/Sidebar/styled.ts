@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const SidebarContainer = styled.aside`
-  width: 250px;
   color: white;
   display: flex;
   flex-direction: column;

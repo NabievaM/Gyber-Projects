@@ -1,17 +1,20 @@
 import { Navbar, Sidebar } from '@/widgets';
 import { Outlet } from 'react-router-dom';
 import '../../styles/globals.css';
+import { Layout, MainContent, SidebarContainer, PageContent } from './styled';
 
 export const MainLayout = () => {
   return (
-    <main className="layout">
+    <Layout>
       <Navbar />
-      <div className="main-content">
-        <Sidebar />
-        <div className="page-content">
+      <MainContent>
+        <SidebarContainer>
+          <Sidebar />
+        </SidebarContainer>
+        <PageContent>
           <Outlet />
-        </div>
-      </div>
-    </main>
+        </PageContent>
+      </MainContent>
+    </Layout>
   );
 };
